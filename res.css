@@ -1,0 +1,314 @@
+/* Turn off outline for all elements */
+*{
+    outline:none;
+}
+
+/* Set font of page */
+body {
+    font-family: Segoe UI;
+}
+
+/* Form styling */
+.frm {
+    text-align: center;
+    position: absolute;
+    top: 30px;
+    left: 450px;
+}
+
+/* show history */
+.frmchk {
+    text-align: center;
+    position: absolute;
+    animation: poschange 1s;
+    top: 30px;
+    left: 200px;
+}
+
+/* hide history */
+.frmunchk {
+    text-align: center;
+    position: absolute;
+    animation: pos 1s;
+    top: 30px;
+    left: 450px;
+}
+
+/* input field styling */
+.outtext {
+    height: 45px;
+    text-align: right;
+    font-size: 25px;
+    width: 500px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-style: solid;
+    border-color: #626262;
+    border-radius: 30px;
+    animation: move 1s;
+}
+
+/* Horizontal line styling */
+hr {
+    animation: line 1.5s;
+    animation-delay: 0.75s;
+    color: #2196F3;
+    box-shadow: 0px 0px 5px #2196F3;
+    position: absolute;
+    top: 550px;
+    left: 0px;
+    opacity: 0;
+}
+
+/* animating all buttons enclosed in <div class="hid"> tag */
+.hid {
+    opacity: 0;
+    animation: opac 1s;
+    animation-delay: 1.25s;
+    animation-fill-mode: forwards;
+}
+
+/* Styling textfield which shows input */
+.hidnum {
+    color: #9e9e9e;
+    text-align: right;
+    font-size: 20px;
+    width: 450px;
+    border: 0;
+}
+
+/* Styling textfield which shows intermediate result */
+.hidsign {
+    color: #9e9e9e;
+    text-align: right;
+    font-size: 25px;
+    width: 450px;
+    border: 0;
+}
+
+/* styling all numeric and operator buttons */
+.numbtn {
+    height: 50px;
+    width: 50px;
+    border: 0;
+    background-color: white;
+    font-size: 20px;
+    border-radius: 45px;
+}
+
+/* Styling "=" button */
+.equal {
+    height: 50px;
+    width: 214px;
+    border: 0;
+    background-color: white;
+    font-size: 20px;
+    border-radius: 45px;
+}
+
+/* styling select input field and select button */
+.selectGroup {
+    width: 215px;
+    position: relative;
+    top:50%;
+    left:52%;
+    transform: translate(-50%,0%);
+    
+    border-style:solid;
+    border-color: white;
+    border-radius: 30px;
+    border-width:2px;
+}
+
+
+.selectGroup:hover{
+    border-style:solid;
+    border-color: #2196F3;
+    border-radius: 30px;
+    border-width:2px;
+}
+
+.selectOperation {
+    height: 50px;
+    width: 105px;
+    border: 0;
+    background-color: white;
+    font-size: 20px;
+    border-radius: 0px 45px 45px 0px;
+}
+
+.selectbtn {
+    text-align: center;
+    height: 50px;
+    width: 105px;
+    border: 0;
+    background-color: white;
+    font-size: 20px;
+    color: #ff9800;
+    border-radius: 45px 0px 0px 45px;
+}
+
+.cls {
+    height: 50px;
+    width: 105px;
+    border: 0;
+    background-color: white;
+    font-size: 20px;
+    border-radius: 45px;
+}
+
+.numbtn:hover, .zero:hover, .equal:hover, .cls:hover, .sqrt:hover, .historybtn:hover, .selectbtn:hover, .selectOperation:hover {
+    background-color: #D3D3D3;
+}
+
+.numbtn:active, .zero:active, .equal:active, .cls:active, .sqrt:active, .historybtn:active, .selectOperation:active {
+    background-color: #9e9e9e;
+}
+
+.text {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.history {
+    position: absolute;
+    top: 0px;
+    left: 550px;
+    color: #626262;
+    border-color: #626262;
+    font-size: 18px;
+    resize: none;
+    overflow: hidden;
+    border-style: solid;
+    visibility: hidden;
+    height: 0px;
+    width: 0px;
+}
+
+.historychk {
+    position: absolute;
+    top: 0px;
+    left: 550px;
+    color: #626262;
+    border-color: #626262;
+    font-size: 18px;
+    resize: none;
+    border-style: solid;
+    animation: textexpand 1s;
+    height: 550px;
+    width: 450px;
+}
+
+.historyunchk {
+    position: absolute;
+    top: 0px;
+    left: 550px;
+    color: #626262;
+    border-color: #626262;
+    font-size: 18px;
+    resize: none;
+    overflow: hidden;
+    border-style: solid;
+    visibility: hidden;
+    height: 0px;
+    width: 0px;
+}
+
+.historybtn {
+    height: 40px;
+    width: 150px;
+    border: 0;
+    background-color: white;
+    font-size: 15px;
+    font-weight: bold;
+    color: #2196F3;
+    border-radius: 45px;
+}
+
+@keyframes move {
+    from {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        opacity: 0;
+    }
+
+    to {
+        position: absolute;
+        top: 56px;
+        left: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes line {
+    0% {
+        width: 0%;
+        position: absolute;
+        top: 110px;
+        left: 0px;
+    }
+
+    25% {
+        width: 100%;
+        position: absolute;
+        top: 110px;
+        left: 0px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 100%;
+        position: absolute;
+        top: 550px;
+        left: 0px;
+        opacity: 0;
+    }
+}
+
+@keyframes opac {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pos {
+    from {
+        top: 30px;
+        left: 200px;
+    }
+
+    to {
+        top: 30px;
+        left: 450px;
+    }
+}
+
+@keyframes poschange {
+    from {
+        top: 30px;
+        left: 450px;
+    }
+
+    to {
+        top: 30px;
+        left: 200px;
+    }
+}
+
+@keyframes textexpand {
+    from {
+        height: 0px;
+        width: 0px;
+        visibility: hidden;
+    }
+
+    to {
+        height: 550px;
+        width: 450px;
+    }
+}

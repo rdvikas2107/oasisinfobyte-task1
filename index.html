@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="src/res.css" type="text/css">
+    <script language="javascript" src="src/script.js"></script>
+
+</head>
+<body onload="load()">
+
+    <form name="Cal" id="Cal" class="frm">
+        <input type="text" name="hidnum" class="hidnum" readonly><br> <!-- Text field to show input expression -->
+        <input type="text" name="hidsign" class="hidsign" readonly><br> <!-- Text field to show intermediate result -->
+        <input type="text" name="out" class="outtext" oninput="chk()" onkeypress="enter(event)"><br><br> <!-- Text field to show input or final result -->
+        <hr>
+        <div class="hid">
+            
+            <!-- Buttons -->
+            <input type="button" name="num1" value="1" onclick="fnum(1)" class="numbtn">
+            <input type="button" name="num2" value="2" onclick="fnum(2)" class="numbtn">
+            <input type="button" name="num3" value="3" onclick="fnum(3)" class="numbtn">
+            <input type="button" name="add" value="+" onclick="fopt('+')" class="numbtn"><br>
+            <input type="button" name="num4" value="4" onclick="fnum(4)" class="numbtn">
+            <input type="button" name="num5" value="5" onclick="fnum(5)" class="numbtn">
+            <input type="button" name="num6" value="6" onclick="fnum(6)" class="numbtn">
+            <input type="button" name="sub" value="-" onclick="fopt('-')" class="numbtn"><br>
+            <input type="button" name="num7" value="7" onclick="fnum7()" class="numbtn">
+            <input type="button" name="num8" value="8" onclick="fnum(8)" class="numbtn">
+            <input type="button" name="num9" value="9" onclick="fnum(9)" class="numbtn">
+            <input type="button" name="mul" value="*" onclick="fopt('*')" class="numbtn"><br>
+            <input type="button" name="num0" value="0" onclick="fnum(0)" class="numbtn">
+            <input type="button" name="numpt" value="." onclick="fnum('.')" class="numbtn">
+            <input type="button" name="numcom" value="," onclick="fnum(',')" class="numbtn">
+            
+            <input type="button" name="div" value="/" onclick="fopt('/')" class="numbtn"><br>
+            <input type="button" name="obrac" value="(" onclick="fnum('(')" class="cls">
+            <input type="button" name="cbrac" value=")" onclick="fnum(')')" class="cls"><br>
+            
+            <div class="selectGroup">
+                <select class="selectbtn" id="ex_opt">
+                    <option onclick="optionclk()">sqrt</option>
+                    <option onclick="optionclk()">sin</option>
+                    <option onclick="optionclk()">cos</option>
+                    <option onclick="optionclk()">tan</option>
+                    <option onclick="optionclk()">log</option>
+                    <option onclick="optionclk()">pow</option>
+                    <option onclick="optionclk()">max</option>
+                    <option onclick="optionclk()">min</option>
+                </select>
+                <input type="button" name="select_opt" value="Select" onclick="Operation()" class="selectOperation"><br>
+                
+            </div>  
+            
+            <input type="button" name="ans" value="=" onclick="fans()" class="equal"><br>
+            <input type="button" name="cls" value="Backspace" onclick="fcls()" class="cls">
+            <input type="button" name="clsa" value="Clear All" onclick="fclsa()" class="cls"><br>
+
+            <div class="text">
+
+                <input type="button" id="hisstat" onclick="show()" value="Show History" class="historybtn">
+            </div><br>
+
+            <input type="hidden" name="ind"><br>
+            <textarea id="history" rows=25 cols=40 class="history" readonly></textarea>
+        </div>
+    </form>
+</body>
+</html>
